@@ -1,0 +1,350 @@
+<!--============================= HEADER =============================-->
+<div class="dark-bg sticky-top">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <nav class="navbar navbar-expand-lg navbar-light">
+          <a class="navbar-brand" href="index.html">Automoviles</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="icon-menu"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+              <li class="nav-item dropdown">
+                <a class="nav-link" href="index.html" aria-haspopup="true">
+                  Inicio
+
+                </a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link" href="#" id="navbarDropdownMenuLink1" data-toggle="dropdown" aria-haspopup="true"
+                  aria-expanded="false">
+                  Marcas
+                  <span class="icon-arrow-down"></span>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  <a class="dropdown-item" href="#">BMW</a>
+                  <a class="dropdown-item" href="#">Mercendes Benz</a>
+                  <a class="dropdown-item" href="#">Honda</a>
+                </div>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true"
+                  aria-expanded="false">
+                  Categorias
+                  <span class="icon-arrow-down"></span>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  <a class="dropdown-item" href="#">Carros Nuevos</a>
+                  <a class="dropdown-item" href="#">Carros Usados</a>
+                  <a class="dropdown-item" href="#">Carros Tuning</a>
+                  <a class="dropdown-item" href="#">Motos Nuevas</a>
+                  <a class="dropdown-item" href="#">Motos Usados</a>
+                  <a class="dropdown-item" href="#">Motos Tuning</a>
+                </div>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="listado.html">Listados</a>
+              </li>
+
+              <li><a href="#" class="btn btn-outline-light top-btn"><span class="ti-plus"></span> Publica tu anuncio</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </div>
+</div>
+<!--//END HEADER -->
+<!--============================= BOOKING =============================-->
+<div>
+  <!-- Swiper -->
+
+</div>
+<!--//END BOOKING -->
+<!--============================= RESERVE A SEAT =============================-->
+
+<!--//END RESERVE A SEAT -->
+<!--============================= BOOKING DETAILS =============================-->
+<section class="light-bg booking-details_wrap">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 responsive-wrap">
+
+        <div class="booking-checkbox_wrap mt-4">
+          <div style="text-align: center;">
+            <h6>titulo</h6><h6 *ngIf="car.anio">- {{car.anio}}</h6>
+          </div>
+          <hr>
+          <div style="text-align: center;">
+            <ng-container *ngIf="car.images.length>0">
+              <img src="{{car.images[0].ruta}}" class="img-fluid" alt="#" width="80%" height="80%">
+            </ng-container>
+
+            <ng-container *ngIf="car.images.length==0">
+              <img src="\assets\images\default.png" class="img-fluid" alt="#" width="80%" height="80%">
+            </ng-container>
+
+          </div>
+
+          <hr>
+          <div class="customer-review_wrap">
+
+            <div class="cbooking-checkbox_wrap">
+              <div class="customer-content">
+                <div class="customer-review">
+
+
+                </div><br>
+                <hr><br>
+                <div class="customer-rating" style="background:none;"><a href="#" class="boton azul"
+                    style="color: #0070ba;border: 1px solid #0070ba;background:white; text-decoration: none !important;"><i
+                      class="ti-heart"></i>&nbsp;Guardar</a></div>
+              </div>
+              <p class="customer-text">
+              <div class="row">
+                <div class="col-sm">
+                  <span><i class="ti-dashboard"></i></span>
+                  <h6>{{car.kilometraje}} Km</h6>
+                  <span>Kilometraje</span>
+
+                </div>
+                <div class="col-sm">
+                  <span><i class="ti-hand-drag"></i></span>
+                  <h6>{{car.transmision}} </h6>
+                  <span>Transmisión</span>
+
+                </div>
+                <div class="col-sm" *ngIf="car.combustible!=''">
+                  <span><i class="ti-car"></i></span>
+                  <h6>{{car.combustible}} </h6>
+                  <span>Combustible</span>
+
+                </div>
+
+
+              </div>
+              <hr>
+
+
+
+            </div>
+          </div>
+
+
+        </div>
+        <div class="booking-checkbox_wrap" id="detalle">
+          <div class="booking-checkbox">
+            <h6>Comentario.</h6><br>
+            <p>
+              {{car.detalle}}</p><br>
+            <hr><br>
+
+            <div class="row">
+              <div class="col-6 cu">
+                <div class="card" style="height: 100%;">
+                  <a class="img-card" style="margin: 0;" href="#">
+                    <img src="coche.png" style="width: 30%;height: 50%;margin-left: 35%;margin-top: 19%;" />
+                  </a>
+                  <div class="card-content">
+
+                    <div style="text-align: center;">
+                      <p class="">
+                        Historial del vehículo
+                      </p>
+                    </div>
+                  </div>
+                  <div class="card-read-more">
+                    <div style="text-align: center;"><button class="offset button">Solicitar Informe</button></div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6 cu">
+                <div class="card" style="height: 100%;">
+                  <a class="img-card" style="margin: 0;" href="pago.jpg">
+                    <img src="dinero.png" style="width: 30%;height: 50%;margin-left: 35%;margin-top: 19%;" />
+                  </a>
+                  <div class="card-content">
+
+                    <div style="text-align: center;">
+                      <p class="">
+                        Evita fraudes y paga con cualquier metodo
+                      </p>
+                    </div>
+                  </div>
+                  <div class="card-read-more">
+                    <div style="text-align: center;"><button class="offset button">Solicitar Transacción</button></div>
+                  </div>
+                </div>
+              </div>
+
+            </div><br>
+            <hr><br>
+            <div style="text-align: center;">
+              <h6>Visión General - Detalles</h6>
+            </div><br>
+            <div class="row" style="background:#ccc;">
+              <div class="col-6">
+                <span>Categoria</span>
+              </div>
+              <div class="col-6">
+                <span>Autos, Camionetas </span>
+              </div>
+
+            </div>
+            <div class="row" style="background:#fff;">
+              <div class="col-6">
+                <span>Marca</span>
+              </div>
+              <div class="col-6">
+                <span>NISSAN</span>
+              </div>
+
+            </div>
+            <div class="row" style="background:#ccc;">
+              <div class="col-6">
+                <span>Modelo</span>
+              </div>
+              <div class="col-6">
+                <span> NP300</span>
+              </div>
+
+            </div>
+            <div class="row" style="background:#fff;">
+              <div class="col-6">
+                <span>Versión</span>
+              </div>
+              <div class="col-6">
+                <span>DC XE 2 3D MT</span>
+              </div>
+
+            </div>
+            <div class="row" style="background:#ccc;">
+              <div class="col-6">
+                <span>Año</span>
+              </div>
+              <div class="col-6">
+                <span>2019</span>
+              </div>
+
+            </div>
+            <div class="row" style="background:#fff;">
+              <div class="col-6">
+                <span>Trasmisión (cambio)</span>
+              </div>
+              <div class="col-6">
+                <span>Manual</span>
+              </div>
+
+            </div>
+            <div class="row" style="background:#ccc;">
+              <div class="col-6">
+                <span>Combustible</span>
+              </div>
+              <div class="col-6">
+                <span>Diesel</span>
+              </div>
+
+            </div>
+            <div class="row" style="background:#fff;">
+              <div class="col-6">
+                <span>Tipo de vehículo</span>
+              </div>
+              <div class="col-6">
+                <span>Camioneta</span>
+              </div>
+
+            </div>
+            <div class="row" style="background:#ccc;">
+              <div class="col-6">
+                <span>Kilometros</span>
+              </div>
+              <div class="col-6">
+                <span>30883</span>
+              </div>
+
+            </div>
+            <div class="row" style="background:#fff;">
+              <div class="col-6">
+                <span>Código</span>
+              </div>
+              <div class="col-6">
+                <span>79698511</span>
+              </div>
+
+            </div>
+            <br>
+            <hr><br>
+
+          </div>
+
+        </div>
+      </div>
+
+      <div class="col-md-4 responsive-wrap">
+        <div class="follow" style="margin-top: 8%;">
+          <hr>
+          <div style="text-align: center;">
+            <h1 class="img-fluid" style="font-size: 25px;color: black;">Precio</h1>
+        </div>
+          <div class="follow-img">
+            <h6>$ {{car.precio | number:'1.0-0':'es-ES'}} <small style="color:#ccc;">CLP</small></h6>
+          </div>
+          <!--<ul class="social-counts">
+
+                       <div class="row">
+                                 <div class="col-6">
+                                     <span>Valor cuota 36 meses</span>
+                                     <h6>$108.446</h6>
+                                </div>
+                                <div class="col-6">
+                                    <span>CAE anual</span>
+                                     <h6>27.32%&nbsp;p.a</h6>
+                                </div>
+
+                      </div>
+                  </ul>
+                   <div class="row">
+                                <div class="col-6"><a href="#detalle" class="boton rojo" style="padding: 3px 0;background: #E74C3C;color:white;border-radius: 0px;">Ver Detalle</a></div>
+                                <div class="col-6"> <a href="#" class="boton rojo" style="padding: 3px 0;background: #E74C3C;color:white;border-radius: 0px;">Cotizar</a></div>
+                  </div>-->
+
+        </div>
+        <div class="contact-info">
+          <hr>
+          <div style="text-align: center;"
+          >
+            <h1 class="img-fluid" style="font-size: 25px;color: black;">Contacta al vendedor</h1>
+          </div>
+          <!--<div class="address">
+                      <form>
+                          <input type="text"  class="form-control" style="width: 91%;" placeholder="Ingrese Nombre"><br>
+                          <input type="mail" style="width: 91%;" class="form-control" placeholder="Ingrese Email"><br>
+                          <textarea class="form-control" style="width: 91%;" ></textarea>
+                      </form>
+                  </div>
+                -->
+          <div style="text-align: center;"><a href="{{car.url}}" target="_blank"  style="line-height: 8;"
+              class="raise button">Contactar / Ver aviso</a></div>
+          <hr>
+
+          <!-- <h1  style="font-size: 17px;color: black;font-weight: 400; margin-left: 5%;">Llama al vendedor <i class="ti-mobile" style="float:right;margin-right: 12%;"></i></h1><br>
+                 <p style="font-size: 12px;color: black;margin-left: 5%;">Numero de telefono del vendedor</p>
+                <div style="text-align: center;"><div class="svg-wrapper">
+                    <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
+                      <rect id="shape" height="40" width="150" />
+
+                    </svg>
+                  </div></div>
+
+                 <div id="myDIV" style="display:none;">
+                   <div style="text-align: center;"><p> +44 123 456 789<br></p></div>
+              </div>-->
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>

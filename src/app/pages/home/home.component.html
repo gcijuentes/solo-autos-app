@@ -1,0 +1,405 @@
+<!--============================= HEADER =============================-->
+<div class="nav-menu">
+  <div class="bg transition">
+    <div class="container-fluid fixed">
+      <div class="row">
+        <div class="col-md-12">
+          <nav class="navbar navbar-expand-lg navbar-light">
+            <a class="navbar-brand" href="index.html">Vehículos</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+              aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="icon-menu"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+              <ul class="navbar-nav">
+
+                <li class="nav-item">
+                  <a class="nav-link" [routerLink]="['/']">Inicio</a>
+                </li>
+
+                <li class="nav-item dropdown">
+                  <a class="nav-link" href="#" id="navbarDropdownMenuLink1" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false">
+                    Marcas
+                    <span class="icon-arrow-down"></span>
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" href="#">BMW</a>
+                    <a class="dropdown-item" href="#">Mercendes Benz</a>
+                    <a class="dropdown-item" href="#">Honda</a>
+                  </div>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false">
+                    Categorias
+                    <span class="icon-arrow-down"></span>
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" href="#">Carros Nuevos</a>
+                    <a class="dropdown-item" href="#">Carros Usados</a>
+                    <a class="dropdown-item" href="#">Carros Tuning</a>
+                    <a class="dropdown-item" href="#">Motos Nuevas</a>
+                    <a class="dropdown-item" href="#">Motos Usados</a>
+                    <a class="dropdown-item" href="#">Motos Tuning</a>
+
+                  </div>
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link" [routerLink]="['list']">Listados</a>
+                </li>
+
+                <li><a href="#" class="btn btn-outline-light top-btn"><span class="ti-plus"></span> Publica tu
+                    anuncio</a></li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- SLIDER -->
+<style type="text/css">
+  .slider {
+    background: url(assets/images/portada/fondo2.jpg) no-repeat !important;
+  }
+
+
+  .styled-heading h3:after {
+    background: #00ECFF !important;
+  }
+
+  .btn-form {
+
+    background: #00D7E8 !important;
+
+  }
+
+  .featured-btn-wrap .btn-danger {
+    background: #00D7E8 !important;
+  }
+</style>
+<section class="slider d-flex align-items-center">
+  <!-- <img src="images/slider.jpg" class="img-fluid" alt="#"> -->
+  <div class="container">
+    <div class="row d-flex justify-content-center">
+      <div class="col-md-12">
+        <div class="slider-title_box">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="slider-content_wrap">
+                <h1>Cotiza vehículos en un solo lugar</h1>
+                <!-- SLIDER
+   <h5>Let's uncover the best places to eat, drink, and shop nearest to you.</h5>-->
+              </div>
+            </div>
+          </div>
+          <div class="row d-flex justify-content-center">
+            <div class="col-md-10">
+              <form [formGroup]="searchForm" class="form-wrap mt-4">
+                <div class="btn-group" role="group" aria-label="Basic example">
+                  <input type="text" placeholder="Que estas Buscando?" class="btn-group1 form-control"
+                  minlength="3"
+                  formControlName="search_input">
+                  <select class="btn-group2" formControlName="brand_select">
+                    <option value="">Seleccione la Marca</option>
+                    <option value="1">Mercedes Benz</option>
+                    <option value="2">BMV</option>
+                    <option value="3">Honda</option>
+
+                  </select>
+                  <!--<a class="btn btn-form" (click)="search()" ><span class="icon-magnifier search-icon"></span>Buscar<i
+                      class="pe-7s-angle-right"></i></a>-->
+                  <button type="button" class="btn-form " style="cursor: pointer;" (click)="search()" ><span class="icon-magnifier search-icon"></span>Buscar<i class="pe-7s-angle-right"></i></button>
+                </div>
+              </form>
+              <div class="slider-link">
+                <!--
+<a href="#">Browse Popular</a><span>or</span> <a href="#">Recently Added</a>
+-->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--// SLIDER -->
+
+<!--============================= FEATURED PLACES =============================-->
+<section class="main-block light-bg">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-5">
+        <div class="styled-heading">
+          <h3>Anuncios Mas Recientes</h3>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4 featured-responsive">
+        <div class="featured-place-wrap">
+          <a href="detail.html">
+            <img src="assets/images/carros/merce2.jpg" class="img-fluid" alt="#" width="80%" height="80%">
+            <span class="featured-rating-orange">6.5</span>
+            <div class="featured-title-box">
+              <h6>Automovil Mercedes Benz</h6>
+              <p>Usado</p> <span>• </span>
+              <p>3 Comentarios</p> <span> • </span>
+              <p>Precio: 15000$</p>
+              <ul>
+                <li><span class="icon-location-pin"></span>
+                  <p>Chile, Villa del mar</p>
+                </li>
+                <li><span class="icon-screen-smartphone"></span>
+                  <p>+44 123 456 789</p>
+                </li>
+
+              </ul>
+              <div class="bottom-icons">
+                <div class="open-now">Disponible</div>
+                <span class="ti-heart"></span>
+                <span class="ti-bookmark"></span>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="col-md-4 featured-responsive">
+        <div class="featured-place-wrap">
+          <a href="detail.html">
+            <img src="assets/images/carros/bmw2.jpg" class="img-fluid" alt="#" width="80%" height="80%">
+            <span class="featured-rating-green">9.5</span>
+            <div class="featured-title-box">
+              <h6>Automovil BMW</h6>
+              <p>Usado</p> <span>• </span>
+              <p>31 Comentarios</p> <span> • </span>
+              <p>Precio: 20000$</p>
+              <ul>
+                <li><span class="icon-location-pin"></span>
+                  <p>Chile, Villa del mar</p>
+                </li>
+                <li><span class="icon-screen-smartphone"></span>
+                  <p>+44 123 456 789</p>
+                </li>
+
+              </ul>
+              <div class="bottom-icons">
+                <div class="closed-now">No Disponible</div>
+                <span class="ti-heart"></span>
+                <span class="ti-bookmark"></span>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="col-md-4 featured-responsive">
+        <div class="featured-place-wrap">
+          <a href="detail.html">
+            <img src="assets/images/carros/honda2.jpg" class="img-fluid" alt="#" width="80%" height="80%">
+            <span class="featured-rating">3.2</span>
+            <div class="featured-title-box">
+              <h6>Automovil Honda Benz</h6>
+              <p>Nueno</p> <span>• </span>
+              <p>30 Comentarios</p> <span> • </span>
+              <p>Precio: 10000$</p>
+              <ul>
+                <li><span class="icon-location-pin"></span>
+                  <p>Chile, Villa del mar</p>
+                </li>
+                <li><span class="icon-screen-smartphone"></span>
+                  <p>+44 123 456 789</p>
+                </li>
+
+              </ul>
+              <div class="bottom-icons">
+                <div class="open-now">Disponible</div>
+                <span class="ti-heart"></span>
+                <span class="ti-bookmark"></span>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-md-4">
+        <div class="featured-btn-wrap">
+          <a href="#" class="btn btn-danger">Ver Todo</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--//END FEATURED PLACES -->
+
+
+
+
+
+
+<!--//END HEADER -->
+<!--============================= FIND PLACES =============================-->
+<section class="main-block">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-5">
+        <div class="styled-heading">
+          <h3>Cual es tu marca?</h3>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="find-place-img_wrap">
+          <div class="grid">
+            <figure class="effect-ruby">
+              <img src="assets/images/portada/merce.jpg" class="img-fluid" alt="img13" />
+              <figcaption>
+                <h5>Mercedes Benz</h5>
+                <p>385 Resultados encontrados</p>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="find-place-img_wrap">
+          <div class="grid">
+            <figure class="effect-ruby">
+              <img src="assets/images/portada/BMW.jpg" class="img-fluid" alt="img13" />
+              <figcaption>
+                <h5>BMV</h5>
+                <p>210 Resultados encontrados</p>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="col-md-4">
+        <div class="find-place-img_wrap">
+          <div class="grid">
+            <figure class="effect-ruby">
+              <img src="assets/images/portada/honda.jpg" class="img-fluid" alt="img13" />
+              <figcaption>
+                <h5>Honda</h5>
+                <p>125 Resultados encontrados</p>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--//END FIND PLACES -->
+
+<!--============================= CATEGORIES =============================-->
+<!--============================= FIND PLACES =============================-->
+<section class="main-block">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-5">
+        <div class="styled-heading">
+          <h3>Selecciona tu categoria que se adapta a ti?</h3>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="find-place-img_wrap">
+          <div class="grid">
+            <figure class="effect-ruby">
+              <img src="assets/images/portada/carroN.jpg" class="img-fluid" alt="img13" />
+              <figcaption>
+                <h5>Automoviles Nuevos</h5>
+                <p>85 Resultados encontrados</p>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="find-place-img_wrap">
+          <div class="grid">
+            <figure class="effect-ruby">
+              <img src="assets/images/portada/carroU.jpg" class="img-fluid" alt="img13" />
+              <figcaption>
+                <h5>Automoviles Usados</h5>
+                <p>210 Resultados encontrados</p>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="col-md-4">
+        <div class="find-place-img_wrap">
+          <div class="grid">
+            <figure class="effect-ruby">
+              <img src="assets/images/portada/carroT.jpg" class="img-fluid" alt="img13" />
+              <figcaption>
+                <h5>Automoviles Tuning</h5>
+                <p>11 Resultados encontrados</p>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="find-place-img_wrap">
+          <div class="grid">
+            <figure class="effect-ruby">
+              <img src="assets/images/portada/motoU.jpg" class="img-fluid" alt="img13" />
+              <figcaption>
+                <h5>Motos Usadas</h5>
+                <p>12 Resultados encontrados</p>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="col-md-4">
+        <div class="find-place-img_wrap">
+          <div class="grid">
+            <figure class="effect-ruby">
+              <img src="assets/images/portada/motoN.jpg" class="img-fluid" alt="img13" />
+              <figcaption>
+                <h5>Motos Nuevas</h5>
+                <p>128 Resultados encontrados</p>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="find-place-img_wrap">
+          <div class="grid">
+            <figure class="effect-ruby">
+              <img src="assets/images/portada/motoT.jpg" class="img-fluid" alt="img13" />
+              <figcaption>
+                <h5>Motos Tuning</h5>
+                <p>15 Resultados encontrados</p>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+
+
+
+    </div>
+  </div>
+</section>
+<!--//END FIND PLACES -->
