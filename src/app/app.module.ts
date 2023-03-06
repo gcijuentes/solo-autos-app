@@ -17,6 +17,7 @@ import { CommonModule } from '@angular/common';
 import es from '@angular/common/locales/es';
 import {registerLocaleData} from '@angular/common';
 import { DetailComponent } from './pages/detail/detail.component';
+import { TopCarsComponent } from './components/top-cars/top-cars.component';
 registerLocaleData(es);
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ registerLocaleData(es);
     HomeComponent,
     ListComponent,
     DataslidetoDirective,
-    DetailComponent
+    DetailComponent,
+    TopCarsComponent
   ],
   imports: [
     BrowserModule,

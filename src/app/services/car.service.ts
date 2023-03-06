@@ -47,6 +47,8 @@ export class CarService {
       params = params.append('searchString', searchInput);
     }
 
+    params = params.append('size', '20000');
+
     console.log('[CarService][getCarsParams] - end');
     return this.http.get<CarResponse>(`${environment.api_url}/cars`,{params:params})
     .toPromise();

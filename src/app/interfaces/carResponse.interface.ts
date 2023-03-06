@@ -1,25 +1,22 @@
 export interface CarResponse {
-  success: boolean;
-  data:    data;
+  status:  string;
+  code:    string;
   message: string;
-  meta:    string;
+  data:    Data;
 }
 
-export interface data {
-  current_page:   number;
-  data:           Car[];
-  first_page_url: string;
-  from:           number;
-  last_page:      number;
-  last_page_url:  string;
-  links:          Link[];
-  next_page_url:  null;
-  path:           string;
-  per_page:       number;
-  prev_page_url:  null;
-  to:             number;
-  total:          number;
+export interface Page {
+  size:          number;
+  totalElements: number;
+  totalPages:    number;
+  number:        number;
 }
+
+export interface Data {
+  content: Car[];
+  page:    Page;
+}
+
 
 export interface Car {
   id:               number;
@@ -33,6 +30,7 @@ export interface Car {
   litros_motor:     number;
   cilindros:        number;
   ciudad:           Ciudad;
+
   telefono:         string;
   mail:             string;
   tipo:             string;
@@ -54,15 +52,7 @@ export interface Ad {
 export interface Ciudad {
   id:            number;
   comuna_nombre: string;
-  id_provincias: number;
-  provinces:     Provinces;
-}
-
-export interface Provinces {
-  id:               number;
-  provincia_nombre: string;
-  id_regiones:      number;
-  region:           Region;
+  region:        Region;
 }
 
 export interface Region {

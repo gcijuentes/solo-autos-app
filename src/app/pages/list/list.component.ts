@@ -40,15 +40,14 @@ export class ListComponent implements OnInit {
     this.carService.getCarsParams(this.brand,this.searchQuery)
     .then((result) => {
       console.log(result);
-      this.totalItems = result.data.total;
+      this.totalItems = result.data.page.totalElements;
       this.itemsPerPage = 10;
-      this.currentPage = result.data.current_page;
-      this.carList = result.data.data;
+      this.currentPage = result.data.page.number;
+      this.carList = result.data.content;
 
       console.log('this.totalItems: '+this.totalItems);
       console.log('this.itemsPerPage: '+this.itemsPerPage);
       console.log('this.currentPage: '+this.currentPage);
-
 
       console.log('carList');
       console.log(this.carList);
